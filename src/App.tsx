@@ -55,7 +55,7 @@ function AppContent() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           {/* Landing / Gateway switcher */}
           <Route path="/" element={<Auth />} />
