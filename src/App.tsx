@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider } from './contexts/AppContext';
 import { CommandCenter } from './components/CommandCenter';
 import DashboardLayout from './layouts/DashboardLayout';
@@ -55,7 +55,7 @@ function AppContent() {
 
   return (
     <>
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <HashRouter>
         <Routes>
           {/* Landing / Gateway switcher */}
           <Route path="/" element={<Auth />} />
@@ -112,7 +112,7 @@ function AppContent() {
           isOpen={isCommandOpen} 
           onClose={() => setIsCommandOpen(false)} 
         />
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
